@@ -1,0 +1,24 @@
+{
+  "name": "js_all_in_one_book1_follow",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "postcss": "^8.4.28",
+    "prettier": "^3.0.2",
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}

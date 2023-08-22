@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<h1 id="now-data"></h1>
+<script !src="">
+	const nowData = document.getElementById('now-data');
+	setTimeout(function () {
+		nowData.innerText = new Date().toLocaleString();
+	}, 1000);
+</script>
+</body>
+</html>

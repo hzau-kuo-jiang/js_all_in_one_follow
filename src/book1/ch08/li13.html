@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div class="my-5 bg-sky-400" id="book-store"></div>
+    <div class="bg-green-200" id="cart"></div>
+    <script !src="">
+      const bookStore = {
+        books: [
+          "The Fellowship of the Ring",
+          "The Two Towers",
+          "The Return of the King",
+        ],
+        displayBook: function () {
+          document.getElementById("book-store").innerHTML = this.books
+            .map((book) => `<p>${book}</p>`)
+            .join("");
+
+          shoppingCart.displayCart(this.removeBook.bind(this));
+        },
+        removeBook: function (book) {
+          this.books = this.books.filter((b) => b !== book);
+          this.displayBook();
+        },
+      };
+
+      const shoppingCart = {
+        itemsInCart: ["The Two Towers"],
+        handleClick: function (clickHandler) {
+          return () => {
+            clickHandler(this.itemsInCart[0]);
+          };
+        },
+        displayCart: function (clickHandler) {
+          const renderTarget = document.getElementById("cart");
+          const itemsInCart = this.itemsInCart.map((item) => `<p>${item}</p>`);
+          const checkoutButton =
+            "<button id='checkout' class='bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded'>Check out</button>";
+
+          renderTarget.innerHTML = itemsInCart.join("") + checkoutButton;
+          document
+            .getElementById("checkout")
+            .addEventListener("click", this.handleClick(clickHandler));
+        },
+      };
+
+      bookStore.displayBook();
+    </script>
+  </body>
+</html>

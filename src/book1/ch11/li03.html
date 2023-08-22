@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login Form</title>
+  </head>
+  <body>
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" />
+
+    <p id="greeting"></p>
+
+    <script>
+      const nameEl = document.getElementById("name");
+      const greetingEl = document.getElementById("greeting");
+      nameEl.addEventListener("change", function (event) {
+        greetingEl.textContent = "Hello " + event.target.value;
+        nameEl.value = "";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mouse Tracking</title>
+    <script>
+      window.addEventListener("load", () => {
+        const trackingArea = document.getElementById("tracking-area");
+        const currentPosition = document.getElementById("current-position");
+
+        trackingArea.addEventListener("mousemove", (event) => {
+          currentPosition.innerHTML = `X: ${event.offsetX} Y: ${event.clientY}`;
+        });
+      });
+    </script>
+    <link href="/src/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="mx-auto my-5 h-96 w-1/2 bg-green-200 p-2" id="tracking-area">
+      Move your mouse in here. If it's not working, click inside this box and
+      try again.
+    </div>
+    <h1 class="text-center text-4xl" id="current-position"></h1>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="movie-button">Choose a movie</button>
+    <h1>You should watch <span id="movie-title"></span></h1>
+    <script !src="">
+      const movieButton = document.getElementById("movie-button");
+      const movieTitle = document.getElementById("movie-title");
+      const movies = [
+        "The Fellowship of the Ring",
+        "The Two Towers",
+        "The Return of the King",
+      ];
+      movieButton.addEventListener(
+        "click",
+        () =>
+          (movieTitle.textContent =
+            movies[Math.floor(Math.random() * movies.length)]),
+      );
+    </script>
+  </body>
+</html>

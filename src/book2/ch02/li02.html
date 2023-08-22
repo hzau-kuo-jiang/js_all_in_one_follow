@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reverse</title>
+</head>
+<body>
+<ul>
+	<li>Apple</li>
+	<li>Banana</li>
+	<li>Orange</li>
+	<li>Pear</li>
+</ul>
+
+<label for="add"></label>
+<input type="text" name="add" id="add">
+<button id="addBtn">Add</button>
+
+<script !src="">
+	const ulEl = document.querySelector('ul');
+	const liEls = document.querySelectorAll('li');
+	
+	ulEl.innerHTML= Array.from(liEls).reverse().map(li => li.outerHTML).join('');
+	
+	const addBtn = document.getElementById('addBtn');
+	const addEl = document.getElementById('add');
+	
+	addBtn.addEventListener('click', function () {
+		const liEl = document.createElement('li');
+		liEl.innerText = addEl.value;
+		ulEl.appendChild(liEl);
+		addEl.value = '';
+	});
+	
+</script>
+
+</body>
+</html>

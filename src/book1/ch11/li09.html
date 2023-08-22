@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Read a book</title>
+  </head>
+  <body>
+    <div id="text-display-area"></div>
+    <script>
+      const displayArea = document.getElementById("text-display-area");
+
+      async function readBook() {
+        const response = await fetch("mobydick.txt");
+        displayArea.innerText = await response.text();
+      }
+
+      readBook();
+    </script>
+  </body>
+</html>

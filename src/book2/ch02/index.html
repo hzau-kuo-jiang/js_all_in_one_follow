@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>JavaScript Routing</title>
+  </head>
+  <body>
+    <h1>JavaScript Routing</h1>
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="about.html">About</a>
+      </li>
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+    </ul>
+    <div id="content"></div>
+    <script>
+      const content = document.getElementById("content");
+      const links = document.querySelectorAll("a");
+
+      function handleClick(e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        fetch(href)
+          .then((res) => res.text())
+          .then((data) => {
+            content.innerHTML = data;
+          });
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", handleClick);
+      });
+    </script>
+  </body>
+</html>

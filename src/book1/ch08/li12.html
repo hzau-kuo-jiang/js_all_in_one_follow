@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div id="book-store"></div>
+    <script !src="">
+      const bookStore = {
+        books: [
+          "The Fellowship of the Ring",
+          "The Two Towers",
+          "The Return of the King",
+        ],
+        displayBook: function () {
+          document.getElementById("book-store").innerHTML = this.books
+            .map((book) => `<p>${book}</p>`)
+            .join("");
+        },
+        removeBook: function (book) {
+          this.books = this.books.filter((b) => b !== book);
+          this.displayBook();
+        },
+      };
+      bookStore.displayBook();
+      setTimeout(() => bookStore.removeBook("The Two Towers"), 2000);
+    </script>
+  </body>
+</html>
